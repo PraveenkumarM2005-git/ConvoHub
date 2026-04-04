@@ -4,7 +4,7 @@
 // ============================================================
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore";
 
 const LoginPage = () => {
@@ -13,12 +13,16 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { login, error, clearError } = useAuthStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await login(email, password);
+    const res = await login(email, password);
     setIsSubmitting(false);
+    if (res?.success) {
+      navigate("/");
+    }
   };
 
   return (
