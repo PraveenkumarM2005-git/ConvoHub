@@ -166,7 +166,7 @@ const ChatInput = ({ selectedChat }) => {
   };
 
   return (
-    <div className="p-2 sm:p-4 bg-dark-950/60 backdrop-blur-xl border-t border-dark-600 z-[60] relative">
+    <div className="px-3 py-2 sm:p-4 bg-dark-950/60 backdrop-blur-xl border-t border-dark-600 z-[60] relative">
       <form onSubmit={handleSend} className="flex items-end gap-0.5 sm:gap-2 relative">
         
         {/* Emoji Picker Popover */}

@@ -132,7 +132,7 @@ const ChatWindow = () => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-1 sm:px-2 py-4 sm:py-6 scroll-smooth z-10 relative">
+      <div className="flex-1 overflow-y-auto px-3 sm:px-2 py-4 sm:py-6 scroll-smooth z-10 relative">
         {isLoadingMessages ? (
             <div className="flex justify-center items-center h-full">
                 <div className="relative w-12 h-12"><div className="absolute inset-0 border-t-2 border-cyan-500 rounded-full animate-spin"></div></div>
