@@ -2,7 +2,7 @@
 
 > **Modern messaging, connected everywhere. A production-grade, real-time chat application built with the MERN stack.**
 
-### 🌍 [Visit Live Application](https://convohub-app.netlify.app)
+### 🌍 [Visit Live Application](https://convo-hub-one.vercel.app)
 **Backend Status**: [https://convohub-backend-2v3r.onrender.com](https://convohub-backend-2v3r.onrender.com)
 
 ---
@@ -18,7 +18,7 @@
 - **Frontend**: React.js 18, Vite, Tailwind CSS v4, Zustand (state management), Socket.io-client, Axios.
 - **Backend**: Node.js, Express, Socket.io, JWT (HTTP-only cookies), Mongoose (MongoDB).
 - **Storage**: Cloudinary (VOD/Media), MongoDB Atlas (Data).
-- **Deployment**: Netlify (Frontend), Render (Backend).
+- **Deployment**: Vercel (Frontend), Render (Backend).
 
 ---
 
@@ -49,7 +49,7 @@
 - **Start Command**: `node server.js`
 - **Env Vars**: `MONGODB_URI`, `JWT_SECRET`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, `PORT`, `NODE_ENV=production`.
 
-### Frontend (Netlify)
+### Frontend (Vercel)
 - **Base directory**: `client`
 - **Build command**: `npm run build`
 - **Publish directory**: `dist`
