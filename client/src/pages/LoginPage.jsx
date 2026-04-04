@@ -22,7 +22,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-b from-[#0A0A0F] to-[#0B1015] relative overflow-hidden">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[#0A0A0F] to-[#0B1015] relative overflow-hidden py-10 md:py-0">
 
       {/* Ambient background glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen -translate-y-1/2 translate-x-1/2"></div>
@@ -35,9 +35,9 @@ const LoginPage = () => {
         </h1>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center w-full max-w-md px-6">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-md px-4 sm:px-6">
         {/* Logo & Branding */}
-        <div className="flex flex-col items-center mb-8">
+        <div className="flex flex-col items-center mb-6 md:mb-8 text-center">
           {/* Logo icon */}
           <div className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-4 bg-[#111118] border border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
             <svg
@@ -71,7 +71,7 @@ const LoginPage = () => {
         </div>
 
         {/* Login Card */}
-        <div className="glass-card w-full p-8 shadow-2xl relative overflow-hidden">
+        <div className="glass-card w-full p-5 sm:p-8 shadow-2xl relative overflow-hidden">
           <h2 className="text-lg font-semibold text-dark-50 mb-1">
             Authorize Connection
           </h2>
@@ -216,8 +216,8 @@ const LoginPage = () => {
           </Link>
         </p>
 
-        {/* Encryption badge */}
-        <div className="fixed bottom-6 left-6 flex items-center gap-2 px-3 py-2 rounded-lg bg-[#14151a] border border-[#22232e]">
+        {/* Encryption badge - hidden on mobile for better space */}
+        <div className="hidden sm:flex fixed bottom-6 left-6 items-center gap-2 px-3 py-2 rounded-lg bg-[#14151a] border border-[#22232e]">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-400">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             <path d="m9 12 2 2 4-4" />

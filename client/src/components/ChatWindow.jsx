@@ -93,15 +93,15 @@ const ChatWindow = () => {
        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen -translate-y-1/2 translate-x-1/2"></div>
 
       {/* Header */}
-      <div className="px-6 py-4 bg-dark-900/80 backdrop-blur-md border-b border-dark-600 flex items-center justify-between z-10 sticky top-0 md:pl-6 pl-16">
-        <div className="flex items-center gap-4 cursor-pointer group/header" onClick={() => selectedChat.type === 'group' && setIsGroupInfoOpen(true)}>
+      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-dark-900/80 backdrop-blur-md border-b border-dark-600 flex items-center justify-between z-10 sticky top-0 md:pl-6 pl-14">
+        <div className="flex items-center gap-2 sm:gap-4 cursor-pointer group/header" onClick={() => selectedChat.type === 'group' && setIsGroupInfoOpen(true)}>
           <div className="relative transform group-hover/header:scale-105 transition-transform">
             {selectedChat.type === 'group' ? (
-                <div className="w-11 h-11 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-lg border border-purple-500/30">#</div>
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-base sm:text-lg border border-purple-500/30">#</div>
             ) : selectedChat.data.avatar ? (
-                <img src={selectedChat.data.avatar} alt={selectedChat.data.name} className="w-11 h-11 rounded-full object-cover border border-dark-600" />
+                <img src={selectedChat.data.avatar} alt={selectedChat.data.name} className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover border border-dark-600" />
             ) : (
-                <div className="w-11 h-11 rounded-full bg-dark-700 flex items-center justify-center text-dark-50 font-bold border border-dark-600 uppercase">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-dark-700 flex items-center justify-center text-dark-50 font-bold border border-dark-600 uppercase text-sm sm:text-base">
                     {selectedChat.data.name.charAt(0)}
                 </div>
             )}
@@ -109,16 +109,16 @@ const ChatWindow = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-cyan-500 rounded-full border-2 border-dark-900 shadow-[0_0_8px_rgba(0,212,170,0.5)]"></div>
             )}
           </div>
-          <div>
-            <h3 className="font-bold text-dark-50 text-[17px] leading-tight flex items-center gap-2 group-hover/header:text-purple-400 transition-colors">
+          <div className="min-w-0">
+            <h3 className="font-bold text-dark-50 text-[15px] sm:text-[17px] leading-tight flex items-center gap-2 group-hover/header:text-purple-400 transition-colors truncate">
                 {selectedChat.data.name}
             </h3>
              {selectedChat.type === 'group' ? (
-                 <p className="text-[13px] text-dark-300 mt-0.5">{selectedChat.data.members?.length} participants</p>
+                 <p className="text-[11px] sm:text-[13px] text-dark-300 mt-0.5">{selectedChat.data.members?.length} participants</p>
              ) : isTyping ? (
-                 <p className="text-[13px] text-purple-400 font-medium italic animate-pulse">incoming signal...</p>
+                 <p className="text-[11px] sm:text-[13px] text-purple-400 font-medium italic animate-pulse">incoming signal...</p>
              ) : (
-                <p className={`text-[13px] font-medium ${isOnline ? 'text-cyan-500' : 'text-dark-300 opacity-60 font-mono'}`}>
+                <p className={`text-[11px] sm:text-[13px] font-medium ${isOnline ? 'text-cyan-500' : 'text-dark-300 opacity-60 font-mono'}`}>
                     {isOnline ? 'Active' : `Last sync: ${selectedChat.data.lastSeen ? format(new Date(selectedChat.data.lastSeen), "HH:mm") : 'Offline'}`}
                 </p>
              )}

@@ -82,7 +82,7 @@ const MessageBubble = ({ message, isGroup }) => {
       )}
 
       <div 
-        className={`relative max-w-[85%] sm:max-w-[70%] fade-in`}
+        className={`relative max-w-[92%] sm:max-w-[70%] fade-in`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

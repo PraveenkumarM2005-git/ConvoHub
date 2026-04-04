@@ -39,7 +39,7 @@ const RegisterPage = () => {
   const displayError = localError || error;
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-b from-[#0A0A0F] to-[#0B1015] relative overflow-hidden">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[#0A0A0F] to-[#100A1F] relative overflow-hidden py-10 md:py-0">
 
 
       {/* Ambient background glow */}
@@ -53,9 +53,9 @@ const RegisterPage = () => {
         </h1>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center w-full max-w-md px-6">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-md px-4 sm:px-6">
         {/* Logo & Branding */}
-        <div className="flex flex-col items-center mb-8">
+        <div className="flex flex-col items-center mb-6 md:mb-8 text-center">
           {/* Logo icon */}
           <div className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-4 bg-[#111118] border border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
             <svg
@@ -89,7 +89,7 @@ const RegisterPage = () => {
         </div>
 
         {/* Register Card */}
-        <div className="glass-card w-full p-8 shadow-2xl relative overflow-hidden">
+        <div className="glass-card w-full p-5 sm:p-8 shadow-2xl relative overflow-hidden">
           <h2 className="text-lg font-semibold text-dark-50 mb-1">
             Request Access
           </h2>
