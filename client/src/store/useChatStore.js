@@ -6,6 +6,7 @@
 
 import { create } from "zustand";
 import api from "../lib/api";
+import useAuthStore from "./useAuthStore";
 
 const useChatStore = create((set, get) => ({
   // State
@@ -98,8 +99,7 @@ const useChatStore = create((set, get) => ({
   // ─── Send a message ───────────────────────────────────────
   sendMessage: async (data) => {
     try {
-      // Accessing auth state directly to get the current user for the preview
-      const authUser = JSON.parse(localStorage.getItem("auth-storage"))?.state?.user;
+      const authUser = useAuthStore.getState().user;
 
       const tempId = `temp-${Date.now()}`;
       const tempMessage = {
@@ -133,7 +133,7 @@ const useChatStore = create((set, get) => ({
   // ─── Send a group message ─────────────────────────────────
   sendGroupMessage: async (data) => {
     try {
-      const authUser = JSON.parse(localStorage.getItem("auth-storage"))?.state?.user;
+      const authUser = useAuthStore.getState().user;
       
       const tempId = `temp-group-${Date.now()}`;
       const tempMessage = {
