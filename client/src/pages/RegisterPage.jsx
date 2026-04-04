@@ -4,7 +4,7 @@
 // ============================================================
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore";
 
 const RegisterPage = () => {
@@ -16,6 +16,7 @@ const RegisterPage = () => {
   const [localError, setLocalError] = useState("");
   const { register, error, clearError } = useAuthStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,8 +33,11 @@ const RegisterPage = () => {
     }
 
     setIsSubmitting(true);
-    await register(name, email, password);
+    const res = await register(name, email, password);
     setIsSubmitting(false);
+    if (res?.success) {
+      navigate("/");
+    }
   };
 
   const displayError = localError || error;
