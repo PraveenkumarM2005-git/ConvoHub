@@ -166,8 +166,8 @@ const ChatInput = ({ selectedChat }) => {
   };
 
   return (
-    <div className="p-3 sm:p-4 bg-dark-950/60 backdrop-blur-xl border-t border-dark-600 z-[60] relative">
-      <form onSubmit={handleSend} className="flex items-end gap-1 sm:gap-2 relative">
+    <div className="p-2 sm:p-4 bg-dark-950/60 backdrop-blur-xl border-t border-dark-600 z-[60] relative">
+      <form onSubmit={handleSend} className="flex items-end gap-0.5 sm:gap-2 relative">
         
         {/* Emoji Picker Popover */}
         {showEmojiPicker && (
@@ -188,7 +188,7 @@ const ChatInput = ({ selectedChat }) => {
           type="button"
           onClick={() => fileInputRef.current?.click()}
           disabled={isUploading}
-          className="p-2 sm:p-2.5 mb-0.5 rounded-lg text-dark-200 hover:text-white hover:bg-dark-800 transition-colors shrink-0 outline-none disabled:opacity-50"
+          className="p-1.5 sm:p-2.5 mb-0.5 rounded-lg text-dark-200 hover:text-white hover:bg-dark-800 transition-colors shrink-0 outline-none disabled:opacity-50"
           title="Attach File"
         >
           {isUploading ? (
@@ -204,7 +204,7 @@ const ChatInput = ({ selectedChat }) => {
         <button
             type="button"
             onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-            className={`p-2 sm:p-2.5 mb-0.5 rounded-lg transition-colors shrink-0 outline-none ${showEmojiPicker ? 'text-purple-400 bg-dark-800' : 'text-dark-200 hover:text-white hover:bg-dark-800'}`}
+            className={`p-1.5 sm:p-2.5 mb-0.5 rounded-lg transition-colors shrink-0 outline-none ${showEmojiPicker ? 'text-purple-400 bg-dark-800' : 'text-dark-200 hover:text-white hover:bg-dark-800'}`}
             title="Emojis"
             disabled={isUploading}
         >
@@ -230,7 +230,7 @@ const ChatInput = ({ selectedChat }) => {
                 onChange={handleTyping}
                 onKeyDown={handleKeyPress}
                 placeholder="Type your message..."
-                className="w-full bg-transparent border-none py-2.5 px-3 sm:py-3 sm:px-4 text-dark-50 placeholder-dark-400 focus:outline-none text-sm sm:text-[15px] resize-none leading-relaxed"
+                className="w-full bg-transparent border-none py-3 px-4 text-dark-50 placeholder-dark-500 focus:outline-none text-[15px] resize-none leading-relaxed"
                 disabled={isUploading}
                 style={{ maxHeight: '150px' }}
             />
@@ -240,14 +240,14 @@ const ChatInput = ({ selectedChat }) => {
         <button
           type="submit"
           disabled={!message.trim() || isUploading}
-          className="btn-primary p-2.5 sm:p-3.5 mb-0.5 rounded-xl shrink-0 outline-none flex items-center justify-center transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn-primary p-3 sm:p-4 mb-0.5 rounded-2xl shrink-0 outline-none flex items-center justify-center transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="ml-0.5 text-white">
              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
           </svg>
         </button>
       </form>
-      <div className="text-center mt-3 text-[10px] text-dark-300 font-medium tracking-[0.1em] uppercase select-none opacity-60">
+      <div className="text-center mt-2 text-[10px] text-dark-500 font-medium tracking-[0.1em] uppercase select-none opacity-60">
         Press enter to send, shift+enter for new line
       </div>
     </div>

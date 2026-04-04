@@ -64,7 +64,7 @@ const MessageBubble = ({ message, isGroup }) => {
     .map((rx) => rx.emoji) || [];
 
   return (
-    <div className={`flex w-full mb-4 px-4 sm:px-6 relative group ${isSentByMe ? "justify-end" : "justify-start"}`}>
+    <div className={`flex w-full mb-4 px-2 sm:px-6 relative group ${isSentByMe ? "justify-end" : "justify-start"}`}>
       {!isSentByMe && isGroup && (
         <div className="mr-2 self-end mb-4">
           {message.senderId?.avatar ? (
@@ -92,7 +92,7 @@ const MessageBubble = ({ message, isGroup }) => {
             </div>
         )}
 
-        <div className={`px-4 py-2.5 shadow-sm text-[15px] leading-relaxed break-words relative w-fit group/bubble
+        <div className={`px-3 py-2 sm:px-4 sm:py-2.5 shadow-sm text-[15px] leading-relaxed break-words relative w-fit group/bubble
           ${message.isDeleted ? "bg-dark-700/50 border border-dark-600 text-dark-300 italic opacity-60 rounded-xl" : (isSentByMe ? "msg-sent ml-auto text-dark-50" : "msg-received text-dark-50")}`}
         >
           {/* Reaction Toolbar (Hover) */}

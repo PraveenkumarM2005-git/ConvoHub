@@ -93,7 +93,7 @@ const ChatWindow = () => {
        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen -translate-y-1/2 translate-x-1/2"></div>
 
       {/* Header */}
-      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-dark-900/80 backdrop-blur-md border-b border-dark-600 flex items-center justify-between z-10 sticky top-0 md:pl-6 pl-14">
+      <div className="px-3 sm:px-6 py-2.5 sm:py-4 bg-dark-900/80 backdrop-blur-md border-b border-dark-600 flex items-center justify-between z-10 sticky top-0 md:pl-6 pl-12">
         <div className="flex items-center gap-2 sm:gap-4 cursor-pointer group/header" onClick={() => selectedChat.type === 'group' && setIsGroupInfoOpen(true)}>
           <div className="relative transform group-hover/header:scale-105 transition-transform">
             {selectedChat.type === 'group' ? (
@@ -132,7 +132,7 @@ const ChatWindow = () => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-2 py-6 scroll-smooth z-10 relative">
+      <div className="flex-1 overflow-y-auto px-1 sm:px-2 py-4 sm:py-6 scroll-smooth z-10 relative">
         {isLoadingMessages ? (
             <div className="flex justify-center items-center h-full">
                 <div className="relative w-12 h-12"><div className="absolute inset-0 border-t-2 border-cyan-500 rounded-full animate-spin"></div></div>
@@ -152,7 +152,7 @@ const ChatWindow = () => {
           ))
         )}
         {isTyping && (
-           <div className="flex items-center gap-2 mb-4 px-6 opacity-70 animate-fade-in">
+           <div className="flex items-center gap-2 mb-4 px-4 sm:px-6 opacity-70 animate-fade-in">
               <span className="text-xs text-dark-300 font-medium">decrypting stream</span>
               <div className="typing-dots"><span></span><span></span><span></span></div>
            </div>
