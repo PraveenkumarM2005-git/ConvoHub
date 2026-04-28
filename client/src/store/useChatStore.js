@@ -345,19 +345,6 @@ const useChatStore = create((set, get) => ({
     });
   },
 
-  // ─── markMessagesReadInState ───────────────────────────────
-  markMessagesReadInState: (readBy) => {
-    // Implement or ensure it matches App.jsx call signature
-    set((state) => ({
-      messages: state.messages.map((msg) => {
-        return {
-          ...msg,
-          readBy: [...new Set([...(msg.readBy || []), ...readBy])],
-        };
-      }),
-    }));
-  },
-
   // ─── Leave group ──────────────────────────────────────────
   leaveGroup: async (groupId) => {
     try {

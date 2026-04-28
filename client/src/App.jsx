@@ -99,7 +99,7 @@ function App() {
           // Audio play failed silently
         }
 
-        if (Notification.permission === "granted") {
+        if (typeof Notification !== "undefined" && Notification.permission === "granted") {
           const senderName = message.senderId?.name || "Someone";
           new Notification("ConvoHub", {
             body:
@@ -208,7 +208,7 @@ function App() {
 
   // Request browser notification permission
   useEffect(() => {
-    if (isAuthenticated && Notification.permission === "default") {
+    if (isAuthenticated && typeof Notification !== "undefined" && Notification.permission === "default") {
       Notification.requestPermission();
     }
   }, [isAuthenticated]);
@@ -216,7 +216,7 @@ function App() {
   // Loading state
   if (isLoading) {
     return (
-      <div className="h-screen w-screen flex items-center justify-center bg-dark-950">
+      <div className="h-[100dvh] w-screen flex items-center justify-center bg-dark-950">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-3 border-cyan-500 border-t-transparent rounded-full animate-spin" />
           <p className="text-dark-100 text-sm tracking-widest uppercase">

@@ -23,7 +23,7 @@ const ChatPage = () => {
   }, [selectedChat]);
 
   return (
-    <div className="flex h-screen w-full bg-dark-950 overflow-hidden">
+    <div className="flex h-[100dvh] w-full bg-dark-950 overflow-hidden">
       {/* Sidebar - responsive behavior */}
       <div 
         className={`w-full md:w-[320px] lg:w-[380px] h-full flex-shrink-0 transition-transform duration-300 ease-in-out absolute md:relative z-20 bg-dark-900 border-r border-dark-600

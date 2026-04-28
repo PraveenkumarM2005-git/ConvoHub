@@ -76,10 +76,12 @@
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
     height: 100vh;
+    height: 100dvh;
   }
 
   #root {
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     margin: 0;
     border: none;
